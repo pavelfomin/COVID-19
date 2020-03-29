@@ -7,3 +7,4 @@ $cmd $inputDir/03-24-2020.csv | tail -n+2 >> $output
 $cmd $inputDir/03-25-2020.csv | tail -n+2 >> $output
 $cmd $inputDir/03-26-2020.csv | tail -n+2 >> $output
 $cmd $inputDir/03-27-2020.csv | tail -n+2 >> $output
+$cmd $inputDir/03-28-2020.csv | tail -n+2 >> $output
