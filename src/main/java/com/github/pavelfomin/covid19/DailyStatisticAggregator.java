@@ -1,5 +1,6 @@
 package com.github.pavelfomin.covid19;
 
+import com.github.pavelfomin.covid19.model.AggregationType;
 import com.github.pavelfomin.covid19.model.DailyStatistic;
 
 import java.time.temporal.ChronoUnit;
@@ -7,6 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -25,17 +28,18 @@ public class DailyStatisticAggregator {
                 .collect(Collectors.toList());
     }
 
-    public List<DailyStatistic> aggregateByCountryAndState(List<DailyStatistic> stats) {
+    public List<DailyStatistic> aggregateByCountryAndState(List<DailyStatistic> stats, AggregationType aggregationType) {
 
-        Map<String, DailyStatistic> aggregated = new HashMap<>();
+        Map<String, DailyStatistic> aggregated = new TreeMap<>();
+        Function<DailyStatistic, String> aggregationKeyFunction = aggregationType.getAggregationKeyFunction();
 
         for (DailyStatistic stat : stats) {
-            String key = stat.getCountry() + "_" + stat.getState();
+            String key = aggregationKeyFunction.apply(stat);
             DailyStatistic dailyStatistic = aggregated.get(key);
             if (dailyStatistic == null) {
                 aggregated.put(key, stat);
                 stat.setUpdated(stat.getUpdated().truncatedTo(ChronoUnit.DAYS));
-                if ("".equals(stat.getState())) {
+                if (aggregationType == AggregationType.Country) {
                     stat.setState(stat.getCountry());
                 }
             } else {
