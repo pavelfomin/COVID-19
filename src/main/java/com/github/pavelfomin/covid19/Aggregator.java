@@ -67,8 +67,19 @@ public class Aggregator {
 
     public static void main(String[] args) throws Exception {
 
+        if (args.length < 2) {
+            usage();
+            System.exit(1);
+        }
         Aggregator aggregator = new Aggregator();
         List<Filter> filters = aggregator.createFilters(Arrays.copyOfRange(args, 1, args.length));
         aggregator.aggregate(args[0], filters);
+    }
+
+    private static void usage() {
+
+        System.out.println("Usage: "+ Aggregator.class.getName() +" <daily report csv> <Country[_State]...");
+        System.out.println("Example 1: "+ Aggregator.class.getName() +" csse_covid_19_data/csse_covid_19_daily_reports/03-25-2020.csv US_Minnesota US_Texas US_Wisconsin US_Oklahoma");
+        System.out.println("Example 2: "+ Aggregator.class.getName() +" csse_covid_19_data/csse_covid_19_daily_reports/03-25-2020.csv Italy Spain Germany Russia \"United Kingdom_\"");
     }
 }
