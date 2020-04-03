@@ -1,5 +1,5 @@
 cmd="java -jar $(ls target/covid19-*.jar)"
-filter=(Italy Spain Germany Russia "United Kingdom_")
+filter=(Italy Spain Germany Russia "United Kingdom_" US)
 inputDir=csse_covid_19_data/csse_covid_19_daily_reports
 output=aggregated/covid19-world.csv
 
