@@ -13,3 +13,4 @@ $cmd $inputDir/03-29-2020.csv State $filter | tail -n+2 >> $output
 $cmd $inputDir/03-30-2020.csv State $filter | tail -n+2 >> $output
 $cmd $inputDir/03-31-2020.csv State $filter | tail -n+2 >> $output
 $cmd $inputDir/04-01-2020.csv State $filter | tail -n+2 >> $output
+$cmd $inputDir/04-02-2020.csv State $filter | tail -n+2 >> $output
