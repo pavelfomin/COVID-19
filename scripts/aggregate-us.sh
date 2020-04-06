@@ -1,5 +1,5 @@
 cmd="java -jar $(ls target/covid19-*.jar)"
-filter="US_Minnesota US_Texas US_Wisconsin US_Oklahoma"
+filter="US_Minnesota US_Texas US_Wisconsin US_Oklahoma US_Colorado"
 inputDir=csse_covid_19_data/csse_covid_19_daily_reports
 output=aggregated/covid19-us.csv
 
