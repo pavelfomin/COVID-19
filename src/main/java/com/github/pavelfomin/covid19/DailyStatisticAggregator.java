@@ -5,7 +5,6 @@ import com.github.pavelfomin.covid19.model.DailyStatistic;
 
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -28,7 +27,13 @@ public class DailyStatisticAggregator {
                 .collect(Collectors.toList());
     }
 
-    public List<DailyStatistic> aggregateByCountryAndState(List<DailyStatistic> stats, AggregationType aggregationType) {
+    public List<DailyStatistic> aggregateByCountryAndStateAsList(List<DailyStatistic> stats, AggregationType aggregationType) {
+
+        Map<String, DailyStatistic> aggregated = aggregateByCountryAndState(stats, aggregationType);
+        return new ArrayList<>(aggregated.values());
+    }
+
+    public Map<String, DailyStatistic> aggregateByCountryAndState(List<DailyStatistic> stats, AggregationType aggregationType) {
 
         Map<String, DailyStatistic> aggregated = new TreeMap<>();
         Function<DailyStatistic, String> aggregationKeyFunction = aggregationType.getAggregationKeyFunction();
@@ -50,7 +55,7 @@ public class DailyStatisticAggregator {
             }
         }
 
-        return new ArrayList<>(aggregated.values());
+        return aggregated;
     }
 
 }

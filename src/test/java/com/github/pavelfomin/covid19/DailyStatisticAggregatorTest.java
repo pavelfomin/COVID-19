@@ -55,7 +55,7 @@ class DailyStatisticAggregatorTest {
         source.add(new DailyStatistic("Italy", "", date, 10, 20, 30, 40));
         source.add(new DailyStatistic("Spain", "", date, 11, 22, 33, 44));
 
-        List<DailyStatistic> aggregated = aggregator.aggregateByCountryAndState(source, State);
+        List<DailyStatistic> aggregated = aggregator.aggregateByCountryAndStateAsList(source, State);
 
         assertNotNull(aggregated);
         assertEquals(4, aggregated.size());
@@ -103,7 +103,7 @@ class DailyStatisticAggregatorTest {
         source.add(new DailyStatistic("Italy", "", date, 10, 20, 30, 40));
         source.add(new DailyStatistic("Spain", "", date, 11, 22, 33, 44));
 
-        List<DailyStatistic> aggregated = aggregator.aggregateByCountryAndState(source, Country);
+        List<DailyStatistic> aggregated = aggregator.aggregateByCountryAndStateAsList(source, Country);
 
         assertNotNull(aggregated);
         assertEquals(3, aggregated.size());
