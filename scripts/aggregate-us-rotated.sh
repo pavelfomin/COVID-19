@@ -20,3 +20,5 @@ $cmd $inputDir/04-05-2020.csv State Rotate $filter | tail -n+2 >> $output
 $cmd $inputDir/04-06-2020.csv State Rotate $filter | tail -n+2 >> $output
 $cmd $inputDir/04-07-2020.csv State Rotate $filter | tail -n+2 >> $output
 $cmd $inputDir/04-08-2020.csv State Rotate $filter | tail -n+2 >> $output
+$cmd $inputDir/04-09-2020.csv State Rotate $filter | tail -n+2 >> $output
+$cmd $inputDir/04-10-2020.csv State Rotate $filter | tail -n+2 >> $output
