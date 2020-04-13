@@ -3,13 +3,14 @@ package com.github.pavelfomin.covid19.model;
 import com.github.pavelfomin.covid19.CustomLocalDateConverter;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvCustomBindByName;
+import com.opencsv.bean.CsvDate;
 
 import java.time.LocalDateTime;
 
 public class DailyStatistic {
 
     @CsvCustomBindByName(column = "Last_Update", required = true, converter = CustomLocalDateConverter.class)
-//    @CsvDate("yyyy-MM-dd HH:mm:ss")
+    @CsvDate("yyyy-MM-dd HH:mm:ss|M/d/yy H:mm")
     private LocalDateTime updated;
 
     @CsvBindByName(column = "Country_Region", required = true)

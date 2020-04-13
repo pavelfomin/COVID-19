@@ -1,15 +1,18 @@
 package com.github.pavelfomin.covid19;
 
+import com.opencsv.bean.CsvDate;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 
 class CustomLocalDateConverterTest {
 
-    private CustomLocalDateConverter converter = new CustomLocalDateConverter();
+    private CustomLocalDateConverter converter = new CustomLocalDateConverter("yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "M/d/yy H:mm");
 
     @Test
     void convert() {
@@ -26,6 +29,38 @@ class CustomLocalDateConverterTest {
     @Test
     void convertToWrite() {
 
-        assertEquals("2020-03-25 23:33:19", converter.convertToWrite(LocalDateTime.of(2020, 03, 25, 23, 33, 19)));
+        assertEquals("2020-03-25", converter.convertToWrite(LocalDateTime.of(2020, 03, 25, 23, 33, 19)));
+    }
+
+    @Test
+    void parseCsvDateAnnotation() throws NoSuchFieldException {
+
+        converter = spy(converter);
+
+        converter.parseCsvDateAnnotation(TestWithAnnotationAndMultipleReadFormats.class.getDeclaredField("updated"));
+        verify(converter).initialize("yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm:ss", "M/d/yy H:mm");
+
+        converter.parseCsvDateAnnotation(TestWithAnnotationAndReadAndWriteFormat.class.getDeclaredField("updated"));
+        verify(converter).initialize("yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss");
+
+        assertThrows(IllegalArgumentException.class, () -> converter.parseCsvDateAnnotation(TestWithoutAnnotation.class.getDeclaredField("updated")));
+    }
+
+    static class TestWithAnnotationAndMultipleReadFormats {
+
+        @CsvDate(value = "yyyy-MM-dd HH:mm:ss|M/d/yy H:mm")
+        private LocalDateTime updated;
+
+    }
+    static class TestWithAnnotationAndReadAndWriteFormat {
+
+        @CsvDate(value = "yyyy-MM-dd HH:mm:ss", writeFormat = "yyyy-MM-dd", writeFormatEqualsReadFormat = false)
+        private LocalDateTime updated;
+
+    }
+
+    static class TestWithoutAnnotation {
+
+        private LocalDateTime updated;
     }
 }
