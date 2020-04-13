@@ -28,4 +28,15 @@ class CSVParserTest {
         assertEquals(87 + 3, stats.size());
     }
 
+    @Test
+    void readDifferentDateFormats() {
+
+        InputStream input = getClass().getClassLoader().getResourceAsStream("data/test-different-date-format.csv");
+
+        List<DailyStatistic> stats = parser.read(new InputStreamReader(input));
+
+        assertNotNull(stats);
+        assertEquals(2, stats.size());
+    }
+
 }
