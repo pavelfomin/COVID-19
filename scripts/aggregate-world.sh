@@ -28,3 +28,4 @@ $cmd $inputDir/04-13-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/04-14-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/04-15-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/04-16-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/04-17-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
