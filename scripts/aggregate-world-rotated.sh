@@ -36,3 +36,10 @@ $cmd $inputDir/04-21-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $outp
 $cmd $inputDir/04-22-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/04-23-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/04-24-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/04-25-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/04-26-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/04-27-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/04-28-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/04-29-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/04-30-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/05-01-2020.csv Country Rotate "${filter[@]}" | tail -n+2 >> $output
