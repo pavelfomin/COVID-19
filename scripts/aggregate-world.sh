@@ -55,3 +55,5 @@ $cmd $inputDir/05-10-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/05-11-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/05-12-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/05-13-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/05-14-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/05-15-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
