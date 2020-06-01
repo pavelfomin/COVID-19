@@ -67,3 +67,7 @@ $cmd $inputDir/05-22-2020.csv State None $filter | tail -n+2 >> $output
 $cmd $inputDir/05-23-2020.csv State None $filter | tail -n+2 >> $output
 $cmd $inputDir/05-24-2020.csv State None $filter | tail -n+2 >> $output
 $cmd $inputDir/05-25-2020.csv State None $filter | tail -n+2 >> $output
+$cmd $inputDir/05-26-2020.csv State None $filter | tail -n+2 >> $output
+$cmd $inputDir/05-27-2020.csv State None $filter | tail -n+2 >> $output
+$cmd $inputDir/05-28-2020.csv State None $filter | tail -n+2 >> $output
+$cmd $inputDir/05-29-2020.csv State None $filter | tail -n+2 >> $output
