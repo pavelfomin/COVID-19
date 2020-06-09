@@ -71,3 +71,13 @@ $cmd $inputDir/05-26-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/05-27-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/05-28-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
 $cmd $inputDir/05-29-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/05-30-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/05-31-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/06-01-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/06-02-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/06-03-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/06-04-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/06-05-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/06-06-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/06-07-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
+$cmd $inputDir/06-08-2020.csv Country None "${filter[@]}" | tail -n+2 >> $output
